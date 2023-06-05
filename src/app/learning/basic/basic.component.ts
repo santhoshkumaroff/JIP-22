@@ -40,7 +40,7 @@ availableData_new: any[]=[];
   aa: any[] = [];
   bb: number = 0;
 practicecode() {
-  this.practice = true;
+  this.practice_test = true;
   }
   yes() {
     this.showquiz = true;
@@ -70,6 +70,7 @@ practicecode() {
   visible3!: boolean;
   position4!:string;
   practice!:boolean;
+  practice_test! :boolean;
   quizSubmitted = false;
   clickedIndexes: boolean[] = [];
   position!: string;
@@ -119,6 +120,7 @@ practicecode() {
         console.log("Data sent successfully")
       });
     }
+    this.getnotesdata()
     this.title = '';
     this.value = '';
   }
@@ -206,7 +208,7 @@ practicecode() {
 
       index.innerText = `${i + 1}.`;
       title.innerText = item.title;
-      value.innerText = item.content;
+      value.innerHTML = item.content;
 
       // reduce font size of title and value elements
       title.style.fontSize = '7px';
@@ -313,6 +315,9 @@ practicecode() {
   showPrevBtn = false;
 
   showNextContent(index: number) {
+    this.nexttopic++;
+    this.prevtopic++;
+    this.practice_test = false;
     // const nextModuleNo = this.availableData[index]?.module_no + 1;
     // const nextModuleFillups = this.fillups.filter(f => f.module_no === nextModuleNo);
     // if (nextModuleFillups.length > 0) {
@@ -337,7 +342,7 @@ practicecode() {
     } else if (nextIndex === this.GetcontentData.length - 1) {
       // Show only the previous button in the last index
       this.showNextBtn = false;
-      this.showPrevBtn = false;
+      this.showPrevBtn = true;
       this.understandornot = true;
       // this.renderer.selectRootElement(this.questionsContainer.nativeElement).focus();
 
@@ -349,9 +354,11 @@ practicecode() {
     }
   }
 
-
-
+  nexttopic = 1;
+  prevtopic : number = -1;
   showPrevContent(index: number) {
+    this.nexttopic--;
+    this.prevtopic--;
     const prevIndex = this.Currindex - 1;
     if (prevIndex >= 0) {
       const prevData = this.GetcontentData[prevIndex];
@@ -375,11 +382,17 @@ practicecode() {
 
   showContent(data: any) {
     this.selectedData = data;
+  
+
     if(!this.understandornot){
       this.Currindex = this.GetcontentData.findIndex((item: { course_name: any; }) => item.course_name === data.course_name);
       this.showNextBtn = this.Currindex < this.GetcontentData.length - 1;
       this.showPrevBtn = this.Currindex > 0;
     }
+
+    console.log(data);
+  
+    
   }
   
   getdata(): void {
@@ -564,12 +577,13 @@ practicecode() {
   //     this.currentFillupIndex++;
   //   }
   // }
-  previousFillup(i: number) {
+  index : number =0;
+  previousFillup(i: any) {
+    this.index--;
+    this.availableData[i].fillup_answer = '';
+    this.availableData[i].message = '';
       this.currentFillupIndex--;
     // this.split_answer[this.currentFillupIndex] = '';
-    this.availableData[i].fillup_answer = '';
-    this.availableData[this.currentFillupIndex].message = '';
-
   }
   
   
@@ -588,6 +602,7 @@ practicecode() {
   currentDataIndex: number = 0;
   showmodule = false;
   nextFillup(i:any) {
+    this.index++;
     this.availableData[i].message = '';
     this.availableData[i].fillup_answer = '';
     this.aa = this.availableData[i].sentence.split(",");
@@ -601,6 +616,42 @@ practicecode() {
     // this.split_answer[this.currentFillupIndex] = '';
   }  
 
+
+   menuItems: MenuItem[] = [
+    { title: 'Home' },
+    { title: 'About' },
+    { title: 'Contact' }
+    // Add more menu items as needed
+  ];
+
+  showSidebar: boolean = false;
+
+  toggleSidebar() {
+    this.showSidebar = !this.showSidebar;
+  }
+
+  selectMenuItem(item: MenuItem) {
+    // Handle the menu item selection here
+  }
+  isSidebarActive = false;
+
+  toggleSidebarr() {
+    this.isSidebarActive = !this.isSidebarActive;
+    // this.sidebar = true;
+    // this.content = false;
+
+  }
+
+
+content = true;
+sidebar = true;
+
+  toggle_Sidebarr() {
+    this.isSidebarActive = !this.isSidebarActive;
+    // this.sidebar = false;
+    // this.content = true;
+
+  }
 }
 
 

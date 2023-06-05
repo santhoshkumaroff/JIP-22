@@ -28,8 +28,9 @@ import {SpeedDialModule} from 'primeng/speeddial';
 import { QuizComponent } from './quiz/quiz.component';
 import {InputTextareaModule} from 'primeng/inputtextarea';
 import {TerminalModule} from 'primeng/terminal';
-
-
+import { EditorModule } from 'primeng/editor';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { TooltipModule } from 'primeng/tooltip';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,10 @@ import {TerminalModule} from 'primeng/terminal';
     HttpClientModule,
     SpeedDialModule,
     InputTextareaModule,
-    TerminalModule
+    TerminalModule,
+    EditorModule,
+    MatTooltipModule,
+    TooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]

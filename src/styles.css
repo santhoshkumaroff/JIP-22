@@ -1,9 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~@fortawesome/fontawesome-free/css/all.css";
+/* @import "~@fortawesome/fontawesome-free/css/all.css";
 @import "~bootstrap/dist/css/bootstrap.min.css";
 @import '~primeicons/primeicons.css';
-@import '~primeng/resources/primeng.min.css';
-
+@import '~primeng/resources/primeng.min.css'; */
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
 /* @import '~primeicons/primeicons.css';
 @import '~primeng/resources/themes/nova-light/theme.css';
 @import '~primeng/resources/primeng.css';
@@ -35,6 +35,8 @@
     scrollbar-width            : thin;
     -moz-appearance            : initial;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    font-family: 'Poppins', sans-serif;
+
 }
 input,
 textarea,
@@ -51,8 +53,10 @@ a:active {
 html {
     height: 100%;
 }
-body {
+* h1,h2,h3,h4,h5,h6,p,span,div,a{
     font-family: 'Poppins', sans-serif;
+}
+body {
     margin     : 0;
     background : var(--white);
     line-height: 1.4;
