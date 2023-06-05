@@ -1,0 +1,100 @@
+<!-- <div class="quiz-container">
+    <h2>{{ quizTitle }}</h2>
+    <div class="questions-container">
+      <div class="question" *ngFor="let question of questions; let i = index" [hidden]="currentIndex !== i">
+        <div class="question-header">
+          <span class="question-number">Question {{ i + 1 }}:</span>
+          <span class="question-text">{{ question.question }}</span>
+        </div>
+        <div class="options">
+          <div *ngFor="let option of question.options; let j = index">
+            <label class="option">
+              <input type="radio" name="question{{ i }}" [value]="j" [(ngModel)]="selectedAnswers[i]" [disabled]="answered">
+              {{ option }}
+            </label>
+          </div>
+        </div>
+        <div class="answer" *ngIf="showAnswers">
+          <span [ngClass]="{'correct': isAnswerCorrect(i), 'incorrect': isAnswerIncorrect(i)}">Correct answer: {{ question.options[question.answer] }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="controls-container">
+      <button class="submit-button" [hidden]="answered" (click)="submitAnswer()">Submit</button>
+      <button class="next-button" [hidden]="!answered || currentIndex === questions.length - 1" (click)="goToNextQuestion()">Next</button>
+    </div>
+    <div class="results-container" *ngIf="showResults">
+      <div class="percentage-container">
+        <h3>Your percentage: {{ getPercentage() }}%</h3>
+      </div>
+      <div class="correct-answers">
+        <h3>Correct answers:</h3>
+        <ul>
+          <li *ngFor="let question of questions; let i = index" [ngClass]="{'correct': isAnswerCorrect(i)}">
+            {{ question.question }} - {{ question.options[question.answer] }}
+          </li>
+        </ul>
+      </div>
+      <div class="incorrect-answers">
+        <h3>Incorrect answers:</h3>
+        <ul>
+          <li *ngFor="let question of questions; let i = index" [ngClass]="{'incorrect': isAnswerIncorrect(i)}">
+            {{ question.question }} - {{ question.options[selectedAnswers[i]] }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+   -->
+
+<div class=" quizcontent">
+  <form (ngSubmit)="onSubmit()" #questionForm="ngForm">
+
+    <div class="col" style="width: 60%;">
+      <div class="col-md-4" style="width: 100%;">
+        <input type="text" class="form-control" placeholder="Enter question" [(ngModel)]="newQuestion.question"
+          name="question" aria-label="question" style="width: 100%;" required>
+      </div>
+      <div class="col-md-4" style="width: 100%;">
+        <div class="addoptions">
+          <div class="form-group">
+            <input type="text" class="form-control" id="option1" placeholder="option1"
+              [(ngModel)]="newQuestion.options[0]" name="option1" required>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="option2" placeholder="option2"
+              [(ngModel)]="newQuestion.options[1]" name="option2" required>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="option3" placeholder="option3"
+              [(ngModel)]="newQuestion.options[2]" name="option3" required>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="option4" placeholder="option4"
+              [(ngModel)]="newQuestion.options[3]" name="option4" required>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="selectanswer">
+          <div class="form-group">
+            <select class="form-control" id="answer" [(ngModel)]="newQuestion.answer" name="answer" required>
+              <option value="0" disabled>Select an answer</option>
+              <option *ngFor="let option of newQuestion.options; let i = index" [value]="i">{{i}}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" style="margin-top: 1rem; ">
+        <input type="text" class="form-control" placeholder="course code" [(ngModel)]="newQuestion.coursecode"
+          name="coursecode" aria-label="coursecode" required>
+      </div>
+  
+    </div>
+  
+    <div class="addbutton">
+      <button type="submit" class="btn btn-primary" [disabled]="!questionForm.form.valid">Add</button>
+    </div>
+  </form>
+  
+</div>

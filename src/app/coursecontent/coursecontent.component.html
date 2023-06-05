@@ -1,0 +1,309 @@
+<app-navbar></app-navbar>
+<div class="container">
+
+  <div class="content d-flex">
+    <div class="leftcontent">
+      <div class="embed-responsive embed-responsive-16by9 videocontainer">
+        <iframe width="1500" height="315" src="https://www.youtube.com/embed/8JJ101D3knE" allowfullscreen></iframe>
+      </div>
+      <div class="coursedetailflex" style="display: flex;">
+        <div class="contentcoveredcard">
+          <p-card header="Content covered" class="objective"
+            [style]="{'width': '30rem', 'margin-bottom': '2em', 'margin-top':'1rem'}">
+            <ng-template pTemplate="header">
+
+            </ng-template>
+            <div style="gap: 20px;">
+              <div>
+                <i class="fas fa-check"></i><span>Basic git knowledge</span>
+                <i class="fas fa-check" style="margin-left: 1.5rem;"></i><span>Gitlab</span><br>
+              </div>
+              <div>
+                <i class="fas fa-check"></i><span>linux commmands</span>
+                <i class="fas fa-check" style="margin-left: 2.3rem;"></i><span>linux os based commands</span>
+              </div>
+            </div>
+            <br>
+          </p-card>
+        </div>
+        <div class="coursedetails" style="margin-top: 20px; margin-left: 1.5rem;">
+          <div>
+            <h5>"GIT and OS - Linux Commands"</h5>
+            <p style="font-size: 16px;">Learn A-Z everything about linux commands, from the basics, to advanced topics
+              like Gitlb access, OS Installation, and more!
+            </p>
+            
+
+          </div>
+          <div class="d-flex" style="margin-top: 10px;">
+            <div class="d-flex">
+              <i class="fa fa-globe" aria-hidden="true" style="margin-top: 1px;color: #3e7103;"></i>
+              <h6 style="margin-left: 3px;">English</h6>
+            </div>
+            <div class="d-flex" style="margin-left: 1rem;">
+              <i class="fa-solid fa-closed-captioning" style="margin-top: 1px;color: #3e7103;"> </i>
+              <h6 style="margin-left: 3px;">English</h6>
+            </div>
+
+
+          </div>
+          <div style="display: flex; justify-content: left; margin-top: 10px;"> 
+            <button type="submit" class="btn btn-primary" style="width: 200px; border-radius: 100px;" routerLink="/learning">Get started</button>
+          
+          
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="rightcontent">
+
+    </div>
+  </div>
+
+</div>
+<!-- <div style="width: 100%;">
+  <div class="coursecontent" style=" margin-left: 1rem; margin-top: 1rem;">
+    <div style="display: flex;">
+      <div style="width: 70%;">
+        <h4>Course content</h4><br>
+        <span>5 sections</span> &nbsp;<span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+            fill="currentColor" class="bi bi-dot" viewBox="0 0 16 16">
+            <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
+          </svg>
+        </span><span>100 lectures</span> &nbsp;
+        <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dot"
+            viewBox="0 0 16 16">
+            <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
+          </svg>
+        </span><span>10h 30m total length</span>
+        <p-accordion [multiple]="true">
+          <p-accordionTab [transitionOptions]="'0ms'">
+            <ng-template pTemplate="header">
+              <div style="display: flex; align-items: center; justify-content: space-between;">
+                <span>Introduction</span>
+                <span>-(16.00 min)</span>
+              </div>
+            </ng-template>
+            <div style="display: flex; justify-content: space-between;">
+              <div>
+                <i class="fas fa-play-circle custom" style="color: #3e7103;"></i> &nbsp;<span>Basic
+                    linux</span><span> - 5.30</span>
+              </div>
+              <div>
+                <p-button (click)="showMaximizableDialog()" icon="pi pi-external-link" label="preview" [style]="{'color':'#54950b','background-color':'#fff','border':'none'}"></p-button>              
+                <p-dialog header="Preview Video" [(visible)]="displayMaximizable" [modal]="true" [style]="{width: '50vw','box-shadow':'0px'}"
+                  [maximizable]="true" [baseZIndex]="10000" [draggable]="false" [resizable]="false" [transitionOptions]="'0ms'">
+                  <p><iframe width="720" height="300" src="https://www.youtube.com/embed/8JJ101D3knE" allowfullscreen></iframe>
+                  </p>
+                </p-dialog>
+              </div>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+              <div>
+                <i class="fas fa-play-circle custom"></i> &nbsp;<span><a aria-readonly="true"
+                    style="color: black;">Linux commands</a></span><span> - 10.30</span>
+              </div>
+              <div>
+                <a href=""></a>&nbsp;&nbsp;<span>05.00</span>
+              </div>
+            </div>
+          </p-accordionTab>
+          <p-accordionTab [transitionOptions]="'0ms'">
+            <ng-template pTemplate="header">
+              <div style="display: flex; align-items: center; justify-content: space-between;">
+                <span>Introduction</span>
+                <span>-(16.00 min)</span>
+              </div>
+            </ng-template>
+            <div style="display: flex; justify-content: space-between;">
+              <div>
+                <i class="fas fa-play-circle custom" style="color: #3e7103;"></i> &nbsp;<span>Basic
+                    linux</span><span> - 5.30</span>
+              </div>
+              <div>
+                <p-button (click)="showMaximizableDialog()" icon="pi pi-external-link" label="preview" [style]="{'color':'#54950b','background-color':'#fff','border':'none'}"></p-button>              
+                <p-dialog header="Preview Video" [(visible)]="displayMaximizable" [modal]="true" [style]="{width: '50vw','box-shadow':'0px'}"
+                  [maximizable]="true" [baseZIndex]="10000" [draggable]="false" [resizable]="false" [transitionOptions]="'0ms'">
+                  <p><iframe width="720" height="300" src="https://www.youtube.com/embed/8JJ101D3knE" allowfullscreen></iframe>
+                  </p>
+                </p-dialog>
+              </div>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+              <div>
+                <i class="fas fa-play-circle custom"></i> &nbsp;<span><a aria-readonly="true"
+                    style="color: black;">Linux commands</a></span><span> - 10.30</span>
+              </div>
+              <div>
+                <a href=""></a>&nbsp;&nbsp;<span>05.00</span>
+              </div>
+            </div>
+          </p-accordionTab>
+          <p-accordionTab [transitionOptions]="'0ms'">
+            <ng-template pTemplate="header">
+              <div style="display: flex; align-items: center; justify-content: space-between;">
+                <span>Introduction</span>
+                <span>-(16.00 min)</span>
+              </div>
+            </ng-template>
+            <div style="display: flex; justify-content: space-between;">
+              <div>
+                <i class="fas fa-play-circle custom" style="color: #3e7103;"></i> &nbsp;<span>Basic
+                    linux</span><span> - 5.30</span>
+              </div>
+              <div>
+                <p-button (click)="showMaximizableDialog()" icon="pi pi-external-link" label="preview" [style]="{'color':'#54950b','background-color':'#fff','border':'none'}"></p-button>              
+                <p-dialog header="Preview Video" [(visible)]="displayMaximizable" [modal]="true" [style]="{width: '50vw','box-shadow':'0px'}"
+                  [maximizable]="true" [baseZIndex]="10000" [draggable]="false" [resizable]="false" [transitionOptions]="'0ms'">
+                  <p><iframe width="720" height="300" src="https://www.youtube.com/embed/8JJ101D3knE" allowfullscreen></iframe>
+                  </p>
+                </p-dialog>
+              </div>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+              <div>
+                <i class="fas fa-play-circle custom"></i> &nbsp;<span><a aria-readonly="true"
+                    style="color: black;">Linux commands</a></span><span> - 10.30</span>
+              </div>
+              <div>
+                <a href=""></a>&nbsp;&nbsp;<span>05.00</span>
+              </div>
+            </div>
+          </p-accordionTab>
+          <p-accordionTab [transitionOptions]="'0ms'">
+            <ng-template pTemplate="header">
+              <div style="display: flex; align-items: center; justify-content: space-between;">
+                <span>Introduction</span>
+                <span>-(16.00 min)</span>
+              </div>
+            </ng-template>
+            <div style="display: flex; justify-content: space-between;">
+              <div>
+                <i class="fas fa-play-circle custom" style="color: #3e7103;"></i> &nbsp;<span>Basic
+                    linux</span><span> - 5.30</span>
+              </div>
+              <div>
+                <p-button (click)="showMaximizableDialog()" icon="pi pi-external-link" label="preview" [style]="{'color':'#54950b','background-color':'#fff','border':'none'}"></p-button>              
+                <p-dialog header="Preview Video" [(visible)]="displayMaximizable" [modal]="true" [style]="{width: '50vw','box-shadow':'0px'}"
+                  [maximizable]="true" [baseZIndex]="10000" [draggable]="false" [resizable]="false" [transitionOptions]="'0ms'">
+                  <p><iframe width="720" height="300" src="https://www.youtube.com/embed/8JJ101D3knE" allowfullscreen></iframe>
+                  </p>
+                </p-dialog>
+              </div>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+              <div>
+                <i class="fas fa-play-circle custom"></i> &nbsp;<span><a aria-readonly="true"
+                    style="color: black;">Linux commands</a></span><span> - 10.30</span>
+              </div>
+              <div>
+                <a href=""></a>&nbsp;&nbsp;<span>05.00</span>
+              </div>
+            </div>
+          </p-accordionTab>
+          <p-accordionTab [transitionOptions]="'0ms'">
+            <ng-template pTemplate="header">
+              <div style="display: flex; align-items: center; justify-content: space-between;">
+                <span>Introduction</span>
+                <span>-(16.00 min)</span>
+              </div>
+            </ng-template>
+            <div style="display: flex; justify-content: space-between;">
+              <div>
+                <i class="fas fa-play-circle custom" style="color: #3e7103;"></i> &nbsp;<span>Basic
+                    linux</span><span> - 5.30</span>
+              </div>
+              <div>
+                <p-button (click)="showMaximizableDialog()" icon="pi pi-external-link" label="preview" [style]="{'color':'#54950b','background-color':'#fff','border':'none'}"></p-button>              
+                <p-dialog header="Preview Video" [(visible)]="displayMaximizable" [modal]="true" [style]="{width: '50vw','box-shadow':'0px'}"
+                  [maximizable]="true" [baseZIndex]="10000" [draggable]="false" [resizable]="false" [transitionOptions]="'0ms'">
+                  <p><iframe width="720" height="300" src="https://www.youtube.com/embed/8JJ101D3knE" allowfullscreen></iframe>
+                  </p>
+                </p-dialog>
+              </div>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+              <div>
+                <i class="fas fa-play-circle custom"></i> &nbsp;<span><a aria-readonly="true"
+                    style="color: black;">Linux commands</a></span><span> - 10.30</span>
+              </div>
+              <div>
+                <a href=""></a>&nbsp;&nbsp;<span>05.00</span>
+              </div>
+            </div>
+          </p-accordionTab>
+        </p-accordion>
+        <div class="requirements">
+
+
+        </div>
+      </div>
+      <div style="margin-top: 4.0rem;margin-left: 2rem;">
+        <p-card [style]="{width: '330px',height:'650px'}" styleClass="p-card-shadow">
+          <ng-template pTemplate="header">
+            <div class="embed-responsive embed-responsive-16by9 videocontainer">
+              <iframe width="330" height="180" src="https://www.youtube.com/embed/8JJ101D3knE" allowfullscreen></iframe>
+            </div>
+          </ng-template>
+          <div style="display: flex;">
+            <h5><i class="fa fa-inr" aria-hidden="true"></i><b>422</b>
+            </h5> &nbsp;&nbsp;
+            <span style="text-decoration:line-through; font-size: medium;">1000</span>&nbsp;&nbsp;
+            <span><b>80% off</b></span>
+          </div>
+          <div style="color: rgba(252, 22, 22, 0.878);">
+            <i class="fas fa-stopwatch" aria-hidden="true"></i> &nbsp;
+            <span><b>24 hours</b></span>&nbsp;
+            <span>left at this price</span>
+          </div>
+          <br>
+          <p-toast position="bottom-center" key="bc"></p-toast>
+          <div class="cards" style="background-color: #fff; border: 0px;  justify-content: center; width: 100%;">
+            <button type="button" pButton pRipple (click)="showBottomCenter()" label="Add to cart"
+              class="p-button-success"
+              [style]="{'background-color':'#3e7103','display':'flex','justify-content':'center','width':'100%','z-index':'1'}"></button><br>
+
+          </div>
+          <button pButton pRipple type="button" label="Buy now" class="p-button-outlined p-button-secondary"
+            [style]="{'display':'flex','justify-content':'center','width':'100%'}"></button>
+
+          <br>
+
+          <div class="buycard" style="color: black;">
+            <h6><b>This course contains :</b></h6>
+            <div style="font-size: small;">
+              <i class="fas fa-file" style="margin-left: 6.5px;"></i><span
+                style="margin-left: 1rem; font-size: small;">Files download available</span>
+            </div>
+            <div style="font-size: small; margin-top: 7px;">
+              <i class="fas fa-infinity"></i><span style="margin-left: 1rem; font-size: small;">Long time course
+                access</span>
+            </div>
+            <div style="font-size: small; margin-top: 7px;">
+              <i class="fas fa-trophy"></i><span style="margin-left: 1rem; font-size: small;">Course
+                certification</span>
+            </div>
+            <div style="font-size: small; margin-top: 7px;">
+              <i class="fas fa-play-circle custom" style="margin-left: 3px;"></i><span
+                style="margin-left: 1rem; font-size: small;">Best high quality video content</span>
+            </div>
+            <div style="font-size: small; margin-top: 7px;">
+              <i class="fas fa-mobile-alt" style="margin-left: 7px;"></i><span
+                style="margin-left: 1rem; font-size: small;">long time course access</span>
+            </div>
+          </div>
+
+          <ng-template pTemplate="footer">
+          </ng-template>
+        </p-card>
+      </div>
+
+    </div>
+
+
+
+
+  </div>
+
+</div> -->

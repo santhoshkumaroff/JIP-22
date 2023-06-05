@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<body>
+    <div class="logoimg">
+      <img src="assets/Images/logo.png" class="img-fluid " alt="Logo image">
+    </div>
+  <div class="maincontainer">
+    <div *ngIf="success" class="success-message">
+      <img src="assets/Gif/success.gif" alt="Login">
+    </div>
+    <div class="container" *ngIf="container">
+      <input type="checkbox" id="flip" style="display: none;">
+      <div class="cover">
+        <div class="front">
+          <img src="assets/Images/back.jpg" alt="Login">
+        </div>
+        <div class="back">
+          <img src="assets/Images/front.jpg" alt="Signup">
+        </div>
+      </div>
+      <div class="forms">
+        
+        <div class="form-content"  >
+          <div class="login-form">
+            <div class="title">Login</div>
+            <form action="#">
+              <div class="input-boxes">
+                <div class="input-box">
+                  <i class="fa-regular fa-user"></i>
+                  <input type="text" placeholder="Enter your Username / Email-Id" required>
+                </div>
+                <div class="input-box">
+                  <i class="fa-solid fa-lock"></i>
+                  <input type="password" placeholder="Enter your password" required>
+                </div>
+                <div class="text"><a href="#">Forgot password?</a></div>
+                <div class="button input-box" (click)="submitlogin()">
+                  <input type="submit" value="Sumbit" >
+                </div>
+                <div class="text sign-up-text">Don't have an account? <label for="flip">Sigup now</label></div>
+              </div>
+            </form>
+          </div>
+          <div class="signup-form">
+            <div class="title">Signup</div>
+            <form action="#">
+              <div class="input-boxes">
+                <div class="input-box">
+                  <i class="fa-regular fa-user"></i>
+                  <input type="text" placeholder="Enter your name" required>
+                </div>
+                <div class="input-box">
+                  <i class="fa-solid fa-envelope"></i>
+                  <input type="text" placeholder="Enter your email" required>
+                </div>
+                <div class="input-box">
+                  <i class="fa-solid fa-lock"></i>
+                  <input type="password" placeholder="Enter your password" required>
+                </div>
+                <div class="button input-box">
+                  <input type="submit" value="Sumbit" >
+                </div>
+                <div class="text sign-up-text">Already have an account? <label for="flip">Login now</label></div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+</body>
+
+</html>

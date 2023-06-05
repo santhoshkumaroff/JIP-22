@@ -1,0 +1,29 @@
+.container{
+    background-color: #e8e8e8;
+    max-height: 100%;
+    max-width: 100%;
+    padding: 1rem;
+    margin-top: 1.8rem;
+}
+h4{
+    border-bottom: 0.5px dotted black;
+    display: inline-block;
+  padding-bottom: 2px;
+  border-width: 1%;
+}
+.checked{
+  color: #54950b;
+}
+.objective{
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+
+@media screen and (max-width: 960px) {
+  button {
+      width: 100%;
+      margin-bottom: .5rem;
+  }
+}
+
+

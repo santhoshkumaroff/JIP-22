@@ -1,0 +1,378 @@
+<div class="body">
+
+  <div class="data ">
+    <div *ngFor="let data of availableData; let i = index;" class="loopdata" style="flex-direction: column;">
+      <div class="basiccontent ">
+
+        <div class="bodycontent">
+          <div class="maintopiccontainer">
+            <h6 style="display: flex; justify-content: center;">Contents</h6>
+            <div *ngFor="let data of GetcontentData; let i = index">
+              <div class="contentstopic">
+                <p>
+                  <b>{{ i + 1 }} . </b>
+                  <a style="color: #000;" (click)="showContent(data)">{{ data.course_name }}</a>
+                </p>
+              </div>
+            </div>
+            
+          </div>
+          <div class="leftcontent" *ngIf="!selectedData">
+            <div *ngFor="let data of availableData; let i = index" class="leftc" >
+              {{data[i]}}
+              <div class="topiccontent mb-3">
+                <div class="text-white">
+                  <p class="topic"><i class="fa fa-tasks" aria-hidden="true"></i>
+                    Topic - {{ data.course_name }}
+                  </p>
+                </div>
+                <hr>
+              </div>
+              <div class="question ml-5">
+                <p>{{ data.question }}</p>
+              </div>
+              <div class="answer mt-4">
+                <div class="typing-text">
+                  <p>{{ data.answer }}</p>
+                </div>
+              </div>
+            </div>
+            <div class="video mt-1">
+              <video #myVideo class="videos" id="myVideo" controls controlsList="nodownload">
+                <source src="../../../assets/Videos/sample.mp4" type="video/mp4">
+              </video>
+              <button class="btn btn-sm btn-primary buttons" (click)="practicecode()">Practice</button>
+              <p-dialog class="dialog" [(visible)]="practice" [position]="position4" [draggable]="false">
+                <p-header>Git Practice</p-header>
+                <div class="container mt-4" >
+                  {{currentFillupIndex}}
+                  <span>
+                    {{ data?.sentence.split(",")[currentFillupIndex].split('___')[0] }} 
+                    <!-- {{ data[i]?.sentence?.split('___')[0] }}  -->
+                    <input type="text"
+                    [(ngModel)]="data.fillup_answer"
+                    (ngModelChange)="checkAnswer(data)"
+                    [maxlength]="split_answer[currentFillupIndex]?.length"
+                    [style.width.px]="calculateInputWidth(data)"
+                    >
+             
+ 
+                    {{ data?.sentence?.split(",")[currentFillupIndex].split('___')[1] }}
+                  </span>
+                  <p [ngClass]="{'text-success': isCorrect, 'text-danger': !isCorrect}">
+                    {{ data?.message }}
+                  </p>
+                  <br>
+                  <div class="d-flex justify-content-between">
+                    <button class="btn btn-primary" [disabled]="currentFillupIndex === 0"
+                      (click)="previousFillup(i)">Previous</button>
+                    <button class="btn btn-primary" [disabled]="aa.length && currentFillupIndex === bb-1"
+                      (click)="nextFillup(i)">Next</button>
+                  </div>
+                  
+                </div>
+                <div class="container mt-4" *ngIf="aa.length ">
+                  <span>
+                    <strong>Module {{availableData[i]?.module_no}}:</strong> You have completed all the fillups for this module.
+                  </span>
+                  <br>
+                  <div class="d-flex justify-content-center mt-3">
+                    <button class="btn btn-primary">Complete Module</button>
+                  </div>
+                  </div>
+              </p-dialog>
+            </div>
+          </div>
+          <div class="leftcontent" *ngIf="maincontent || selectedData">
+            <div class="leftc">
+              <div class="topiccontent mb-3">
+                <div class="text-white">
+                  <p class="topic"><i class="fa fa-tasks" aria-hidden="true"></i>
+                    Topic - {{ selectedData.course_name }}
+                  </p>
+                </div>
+                <hr>
+              </div>
+              <div class="question ml-5">
+                <p>{{ selectedData.question }}</p>
+              </div>
+              <div class="answer mt-4">
+                <div class="typing-text">
+                  <p>{{ selectedData.answer }}</p>
+                </div>
+              </div>
+            </div>
+            <div class="video mt-1">
+              <video #myVideo class="videos" id="myVideo" controls controlsList="nodownload">
+                <source src="../../../assets/Videos/sample.mp4" type="video/mp4">
+              </video>
+              <div style="display: flex; justify-content: center;">
+                <button class="btn btn-sm btn-primary buttons" (click)="practicecode()">Practice</button>
+              </div>
+              <p-dialog class="dialog" [(visible)]="practice" [position]="position4" [draggable]="false">
+                <p-header>Git Practice</p-header>
+                <div class="container mt-4" *ngIf="currentFillupIndex !== null">
+                  <span>
+                    {{ fillups[currentFillupIndex]?.sentence }}
+                  </span>
+                  <p [ngClass]="{'text-success': fillups[currentFillupIndex].isCorrect, 'text-danger': !fillups[currentFillupIndex].isCorrect}">
+                    {{ fillups[currentFillupIndex].message }}
+                  </p>
+                  <br>
+                  <div class="d-flex justify-content-between">
+                    <button class="btn btn-primary" [disabled]="currentFillupIndex === 0"
+                      (click)="previousFillup(i)">Previous</button>
+                    <button class="btn btn-primary" [disabled]="currentFillupIndex === data.length - 1"
+                      (click)="nextFillup(i)">Next</button>
+                  </div>
+                  </div>
+          
+          
+          
+          
+              </p-dialog>
+            </div>
+          </div>
+        
+          
+          
+        </div>
+
+        <div class="nextprevbuttons">
+          <button *ngIf="showPrevBtn" class="btn btn-sm btn-primary" (click)="showPrevContent(i)"
+            style="border: none; background-color: rgb(16 94 165); width: 75px;
+            height: 35px;"> Previous</button>
+          <button *ngIf="showNextBtn" class="btn btn-sm btn-primary" (click)="showNextContent(i)"
+          style="border: none; background-color: rgb(16 94 165); width: 65px;
+          height: 35px;">Next </button>
+        </div>
+        <div style="display: flex; justify-content: center;">
+          <div class="" *ngIf="understandornot" style="margin-top: 1rem;">
+            <div style="display: flex; justify-content: center; gap: 10px;">
+              <button class="btn btn-sm btn-primary buttons" (click)="yes()"> Go to quiz</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <hr>
+   
+    
+    <div>
+
+      <p-dialog class="dialog quizd" [(visible)]="visible2" [style]="{width: '100vw', height: '100vh'}"
+        [draggable]="false"  [closable]="false" [showHeader]="false">
+        <div class="showquiz" *ngIf="showquiz">
+          <div class="questions-container" #questionsContainer *ngIf="showquiz">
+            <div>
+
+              <div class="quizhead">
+                <div>
+                  <p>Attended Answers: {{ getAttendedAndTotalAnswers() }}</p>
+                </div>
+
+                <div>
+                  <h4 class="heading4">Let's Start Quiz</h4>
+                </div>
+                <div *ngIf="showTimer" style="color: white;" class="attendedanswer">
+                  {{timerValue}}
+                </div>
+
+              </div>
+              <hr>
+              <div class="quiz-content">
+                <div *ngFor="let question of quizData; let i = index">
+                  <div class="questionn">
+                    <div class="question-header">
+                      <span class="question-number">Question {{ i + 1 }}:</span>
+                      <span class="question-text">{{ question.question }}</span>
+                    </div>
+                    <div class="options">
+                      <!-- <p>{{ question.question }}</p> -->
+                      <p class="options">
+                        <label>
+                          <input type="radio" [name]="'question-' + i" [value]="0" (change)="onAnswerSelected(i, 0)"
+                            [disabled]="selectedAnswers[i] !== 0 && selectedAnswers[i] !== undefined">
+                          {{ question.option1 }}
+                        </label>
+                      </p>
+                      <p class="options">
+                        <label>
+                          <input type="radio" [name]="'question-' + i" [value]="1" (change)="onAnswerSelected(i, 1)"
+                            [disabled]="selectedAnswers[i] !== 1 && selectedAnswers[i] !== undefined">
+                          {{ question.option2 }}
+                        </label>
+                      </p>
+                      <p class="options" *ngIf="question.option3">
+                        <label>
+                          <input type="radio" [name]="'question-' + i" [value]="2" (change)="onAnswerSelected(i, 2)"
+                            [disabled]="selectedAnswers[i] !== 2 && selectedAnswers[i] !== undefined">
+                          {{ question.option3 }}
+                        </label>
+                      </p>
+                      <p class="options" *ngIf="question.option4">
+                        <label>
+                          <input type="radio" [name]="'question-' + i" [value]="3" (change)="onAnswerSelected(i, 3)"
+                            [disabled]="selectedAnswers[i] !== 3 && selectedAnswers[i] !== undefined">
+                          {{ question.option4 }}
+                        </label>
+                      </p>
+  
+                      <hr>
+                      <div *ngIf="selectedAnswers[i] !== undefined" class="showanswer">
+                        <p
+                          [ngClass]="{'correct-answer': getAnswerResult(i).isCorrect, 'wrong-answer': getAnswerResult(i).isCorrect}">
+                          {{ getAnswerResult(i).message }}
+                        </p>
+                        <img *ngIf="getAnswerResult(i).isCorrect" src="../../../assets/Gif/smile.gif"
+                          style="width: 80px;height: 80px;">
+                        <img *ngIf="!getAnswerResult(i).isCorrect" src="../../../assets/Gif/oops.gif"
+                          style="width: 80px;height: 80px;">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+              <div class="submit-container" *ngIf="allAnswersSelected()" style="display: flex; justify-content: right;">
+                <button class="submit-button" (click)="submitquiz()">Submit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </p-dialog>
+      <p-dialog class="dialog submitdialog" [(visible)]="visible3" [draggable]="false" [closable]="false" [showHeader]="false">
+        <div>
+          <div *ngIf="wrongAnswers.length > 0">
+            <h2>Wrong Answers:</h2>
+            <div *ngFor="let wrongAnswer of wrongAnswers">
+              <p><b>Question: </b>{{ quizData[wrongAnswer.questionIndex].question }}</p>
+              <p><b>Your answer: </b>{{ quizData[wrongAnswer.questionIndex]['option' + (wrongAnswer.selectedOptionIndex + 1)] }}</p>
+              <p><b>Correct answer: </b>{{ quizData[wrongAnswer.questionIndex]['option' + (wrongAnswer.correctOptionIndex + 1)] }}</p>
+              <p><b>Go and refer this Topics :</b> {{ quizData[wrongAnswer.questionIndex].course_name}}</p>
+              <hr>
+            </div>
+          </div>
+          <div *ngIf="wrongAnswers.length == 0">
+            <h2>Congratulations!</h2>
+            <p>You got all the answers right!</p>
+          </div>
+          <div style="margin-top: 20px;">
+            <p>Time taken: {{ dialogTimeTaken }} seconds</p>
+          </div>
+        </div>
+        <hr>
+        <div style="display: flex;justify-content: center;">
+          <button class="btn btn-sm btn-primary" (click)="endquiz();refreshPage()"
+            style="border: none; background-color: green ">
+            Done
+          </button>
+        </div>
+      </p-dialog>
+      
+    </div>
+  </div>
+</div>
+<div>
+  <div style="display: flex; justify-content: center; overflow: hidden;" class="speeddial-circle-demo">
+    <p-toast></p-toast>
+    <p-speedDial id="speedDial_Circle" [model]="items" direction="down-left" type="quarter-circle"
+      [style]="{'padding':'15px','':''}"></p-speedDial>
+  </div>
+</div>
+<div class="card flex flex-column align-items-center gap-2">
+  <div class="flex flex-wrap gap-2">
+
+  </div>
+  <p-dialog class="dialog" [(visible)]="visible" [position]="position">
+    <p-header> Take your notes</p-header>
+
+    <div>
+      <input type="text" placeholder="Title" class="notestitle" [(ngModel)]="notesdata.title" ngDefaultControl>
+      <div class="notestextarea">
+        <textarea rows="7" cols="75" placeholder="content" [(ngModel)]="notesdata.value" class="textarea"
+          ngDefaultControl></textarea>
+
+      </div>
+
+      <div class="saverefresh">
+        <div>
+          <p-button (click)="onSubmit()">Add</p-button>
+        </div>
+        <div style="padding: 8px; cursor: pointer;"><p><i class="fa fa-save" aria-hidden="true" (click)="refreshPage()"></i></p>
+        </div>
+      </div>
+    </div>
+    <div style="display: flex; justify-content: right;">
+      <i class="fa fa-download" (click)="downloadPdf()"></i>
+    </div>
+    <div id="notes" class="accordion mt-4" *ngFor="let item of datanotes">
+      <p-accordion>
+        <p-accordionTab class="mb-3">
+          <p-header class="pheader">
+            {{ item.title }}
+          </p-header>
+          <div>{{ item.content}}</div>
+        </p-accordionTab>
+      </p-accordion>
+
+
+    </div>
+
+  </p-dialog>
+  <p-dialog class="dialog" [(visible)]="visible1" [position]="position1" [draggable]="false">
+    <p-header> Learn Git commands</p-header>
+    <p-terminal welcomeMessage="Enter commands" prompt="command $ "></p-terminal>
+  </p-dialog>
+  <p-dialog class="dialog" [(visible)]="compiler" [position]="position1" [draggable]="false">
+    <p-header> Compiler</p-header>
+    <div class="term"></div>
+    <textarea class="vi" style="display: none"></textarea>
+  </p-dialog>
+  <p-dialog class="dialog" [(visible)]="quizended" [position]="positionquiz" [draggable]="false" [closable]="false"
+    [showHeader]="false">
+    <p style="margin-top: 1.5rem; color: black; display: flex; justify-content: center;">
+      Your quiz has been ended
+    </p>
+    
+    <ul>
+      <li>Number of Attended Questions: {{ getAttendedAndTotalAnswers() }}</li>
+      <!-- <li>Number of Correct Answers: {{ correctAnswers }}</li>
+    <li>Number of Wrong Answers: {{ wrongAnswers }}</li> -->
+    </ul>
+    <div style="display: flex;justify-content: center;">
+    <button class="btn btn-sm btn-primary" (click)="endquiz();refreshPage()"
+      style="border: none; background-color: green ">
+      Done 
+    </button>
+</div>
+  </p-dialog>
+
+  <p-dialog class="dialog" [(visible)]="visiblee" [position]="positionn" [draggable]="false">
+    <p-header> Download Material</p-header>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">S.no</th>
+          <th scope="col">Content Name</th>
+          <th scope="col">Course Description</th>
+          <th scope="col">Download</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Chapter 1</td>
+          <td>Chapter 1</td>
+          <td class="downloadicon">
+            <a href="../../../assets/Files/sampledata.odt">
+              <i class="fa fa-download" aria-hidden="true"></i>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </p-dialog>
+
+</div>

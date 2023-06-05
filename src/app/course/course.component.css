@@ -1,0 +1,470 @@
+/* 
+body {
+
+}
+
+h2 {
+    font-weight: 900
+}
+.container-fluid {
+    background: url(../../assets/Images/back.jpg) center / cover no-repeat;
+    width: 100%;
+    height: 100%;
+    margin-top: 10%;
+}
+
+.card {
+    font-family:sans-serif;
+    background: #fff;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, .08), 0 0 6px rgba(0, 0, 0, .05);
+    transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
+    border: 0;
+    border-radius: 0.5rem;
+}
+
+
+
+.card h5 {
+   
+}
+
+.card-img-top {
+    width: 100%;
+    max-height: 180px;
+    object-fit: contain
+}
+
+.card h2 {
+    font-size: 1rem
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06)
+}
+
+.label-top {
+    position: absolute;
+    background-color: #54950b;
+    color: #fff;
+    top: 8px;
+    right: 8px;
+    padding: 5px 10px 5px 10px;
+    font-size: .7rem;
+    font-weight: 600;
+    border-radius: 3px;
+    text-transform: uppercase
+}
+
+.top-right {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    font-size: 1rem;
+    font-weight: 900;
+    background: #0f6009;
+    line-height: 90px;
+    text-align: center;
+    color: white
+}
+
+.top-right span {
+    display: inline-block;
+    vertical-align: middle
+}
+
+@media (max-width: 768px) {
+    .card-img-top {
+        max-height: 250px
+    }
+}
+
+.over-bg {
+    background: rgba(53, 53, 53, 0.85);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(0.0px);
+    -webkit-backdrop-filter: blur(0.0px);
+    border-radius: 10px
+}
+
+.btn {
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 5px 50px 5px 50px
+}
+
+.box .btn {
+    font-size: 1.5rem
+}
+
+@media (max-width: 1025px) {
+    .btn {
+        padding: 5px 40px 5px 40px
+    }
+}
+
+@media (max-width: 250px) {
+    .btn {
+        padding: 5px 30px 5px 30px
+    }
+}
+
+.btn-warning {
+    background: none #54950b;
+    color: #ffffff;
+    fill: #ffffff;
+    border: none;
+    text-decoration: none;
+    outline: 0;
+    box-shadow: -1px 6px 19px rgba(21, 141, 8, 0.25);
+    border-radius: 100px
+}
+
+.btn-warning:hover {
+    background: none #3e7103;
+    color: #ffffff;
+    box-shadow: -1px 6px 13px rgba(23, 84, 9, 0.35)
+}
+
+.bg-success {
+    font-size: 1rem;
+    background-color: #226f10 !important
+}
+
+.bg-danger {
+    font-size: 1rem
+}
+
+.price-hp {
+    font-size: 1rem;
+    font-weight: 600;
+    color: darkgray
+}
+
+.amz-hp {
+    font-size: .7rem;
+    font-weight: 600;
+    color: darkgray
+}
+
+.fa-question-circle:before {
+    color: darkgray
+}
+
+.fa-plus:before {
+    color: darkgray
+}
+
+.box {
+    border-radius: 1rem;
+    background: #fff;
+    box-shadow: 0 6px 10px rgb(0 0 0 / 8%), 0 0 6px rgb(0 0 0 / 5%);
+    transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12)
+}
+
+.box-img {
+    max-width: 300px
+}
+
+.thumb-sec {
+    max-width: 300px
+}
+
+@media (max-width: 576px) {
+    .box-img {
+        max-width: 200px
+    }
+
+    .thumb-sec {
+        max-width: 200px
+    }
+}
+
+.inner-gallery {
+    width: 60px;
+    height: 60px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    margin: 1px;
+    display: inline-block;
+    overflow: hidden;
+    -o-object-fit: cover;
+    object-fit: cover
+}
+
+@media (max-width: 370px) {
+    .box .btn {
+        padding: 5px 40px 5px 40px;
+        font-size: 1rem
+    }
+}
+
+.disclaimer {
+    font-size: .9rem;
+    color: darkgray
+}
+
+.related h3 {
+    font-weight: 900
+} */
+body {
+  background-color: #e8e8e8;
+  padding-top: 10px;
+}
+
+.label-top {
+  position: absolute;
+  background-color: #54950b;
+  color: #fff;
+  top: 8px;
+  right: 8px;
+  padding: 5px 10px 5px 10px;
+  font-size: .7rem;
+  font-weight: 600;
+  border-radius: 3px;
+  text-transform: uppercase
+}
+
+.nft {
+  user-select: none;
+  max-width: 300px;
+  max-height: 400px;
+  border: 1px solid #ffffff22;
+  background-color: #e8e8e8;
+  background: linear-gradient(0deg, #282c34 0%, rgba(17, 0, 32, 0.5) 100%);
+  border-radius: 0.7rem;
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  overflow: hidden;
+  transition: 0.5s all;
+  padding-left: 30px;
+}
+
+.nft hr {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #54950b;
+  margin-top: 0;
+}
+
+.nft ins {
+  text-decoration: none;
+}
+
+.nft .main {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin-top: 3rem;
+}
+
+.nft .main .tokenImage {
+  border-radius: 0.5rem;
+  max-width: 100%;
+  height: 100px;
+  object-fit: cover;
+}
+
+.nft .main .description {
+  margin: 0.5rem 0;
+  color: #ebebeb;
+}
+
+.nft .main .tokenInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nft .main .tokenInfo .price {
+  display: flex;
+  align-items: center;
+  color: #54950b;
+  font-weight: 700;
+}
+
+.nft .main .tokenInfo .price ins {
+  margin-left: -0.3rem;
+  margin-right: 0.5rem;
+}
+
+.nft .main .creator {
+  display: flex;
+  align-items: center;
+  margin-top: 0.2rem;
+  margin-bottom: -0.3rem;
+}
+
+.nft .main .creator ins {
+  color: #54950b;
+  text-decoration: none;
+}
+
+.nft .main .creator .wrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ffffff22;
+  padding: 0.3rem;
+  margin: 0;
+  margin-right: 0.5rem;
+  border-radius: 100%;
+  box-shadow: inset 0 0 0 4px #000000aa;
+}
+
+.nft .main .creator .wrapper img {
+  border-radius: 100%;
+  border: 1px solid #ffffff22;
+  width: 2rem;
+  height: 2rem;
+  object-fit: cover;
+  margin: 0;
+}
+
+.nft ::before {
+  position:static;
+  box-shadow: 0 0 100px 40px #ffffff08;
+  top: -10%;
+  left: -100%;
+  transform: rotate(-45deg);
+  height: 60rem;
+  transition: .7s all;
+}
+
+.nft:hover {
+  transform: scale(1.015);
+  filter: brightness(1.3);
+}
+
+.nft:hover ::before {
+  filter: brightness(0.5);
+  top: -100%;
+  left: 200%;
+}
+
+.bg {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.bg h1 {
+  font-size: 20rem;
+  filter: opacity(0.5);
+}
+
+.btn {
+  font-size: .6rem;
+  font-weight: 500;
+  text-transform: uppercase;
+
+}
+
+.box .btn {
+  font-size: .5rem
+}
+
+@media (max-width: 1000) {
+  .btn {
+    padding: 5px 40px 5px 40px
+  }
+}
+
+@media (max-width: 250px) {
+  .btn {
+    padding: 5px 30px 5px 30px
+  }
+}
+
+.btn-warning {
+  background: none #54950b;
+  color: #ffffff;
+  fill: #ffffff;
+  border: none;
+  box-shadow: -1px 6px 19px rgba(21, 141, 8, 0.25);
+  border-radius: 100px;
+
+}
+
+.btn-warning:hover {
+  background: none #3e7103;
+  color: #ffffff;
+  box-shadow: -1px 6px 13px rgba(23, 84, 9, 0.35)
+}
+
+button {
+  font-family: 'Open Sans', sans-serif;
+  font-size: .6rem;
+}
+.checked{
+  color: #54950b;
+}
+.fa-heart-o,
+.fa-heart {
+  color: red;
+  cursor: pointer;
+}
+
+.new-one {
+  border: none !important;
+  background: none !important;
+  box-shadow:none;
+  text-decoration: none;	
+  opacity:1.0;
+  background-color: black;
+  color: #000;
+
+}
+.form-check-input:checked {
+  background-color: #54950b;
+  border-color: #000;
+}
+:host ::ng-deep .p-slider {
+	width: 250px;
+}
+
+:host ::ng-deep .p-slider-handle {
+	border-color: #54950b;
+}
+
+:host ::ng-deep .p-slider .p-slider-handle:hover {
+	border-color: #54950b;
+	background: #fff;
+}
+
+:host ::ng-deep .p-slider .p-slider-handle:focus {
+	border-color: #54950b;
+	box-shadow: none;
+	background: #fff;
+}
+
+:host ::ng-deep .p-slider .p-slider-range{
+  background: #54950b;
+  width: 5%; /* change to the desired width value */
+
+}
+:host ::ng-deep 
+    .p-rating-icon:not(.p-rating-cancel),
+:host ::ng-deep 
+    .p-rating-icon:not(.p-rating-cancel):hover {
+    color: #54950b !important;
+    background-color: #fff;
+}
+:host ::ng-deep .p-rating-handle {
+	border-color: #54950b;
+}
+
+:host ::ng-deep .p-rating .p-rating-handle:hover {
+	border-color: #54950b;
+	background: #fff;
+}
+
+:host ::ng-deep .p-rating .p-rating-handle:focus {
+	border-color: #54950b;
+	box-shadow: none;
+	background: #fff;
+}

@@ -1,0 +1,22 @@
+body{
+  margin-top: 2rem;
+}
+
+/* .text-1{
+  font-size: 50px;
+  font-weight: 500;
+} */
+.firstdiv{
+  background-color: #ededed;
+  display: flex;
+  justify-content: center;
+  padding-top: 12px;
+  font-size: small;
+}
+/* .firstdiv button{
+  margin-left: 2rem;
+  background-color:#345d06 ;
+}
+.mainhead{
+  border-radius: 5rem;
+} */

@@ -1,0 +1,104 @@
+<app-navbar></app-navbar>
+
+
+  <main>
+
+    <div class="container-fluid bg-trasparent my-4 p-3" style="position: relative;">
+      <div class="d-flex">
+        <!-- <div class="accordion" id="accordionPanelsStayOpenExample" style="width: 20%;">
+          <div class="accordion-item">
+            <h2 class="accordion-header new-one" id="panelsStayOpen-headingOne">
+              <button class="accordion-button new-one" style="font-size: 14px;" type="button" data-bs-toggle="collapse"
+                data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                aria-controls="panelsStayOpen-collapseOne">
+                <i class="fa fa-filter" aria-hidden="true"></i> &nbsp;
+                Filter
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+              aria-labelledby="panelsStayOpen-headingOne">
+              <div class="accordion-body" style="color:black ;">
+                <label for="customRange3" class="form-label">Price type</label>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Free
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                  <label class="form-check-label" for="flexCheckChecked">
+                    Cost
+                  </label>
+                </div>
+                <hr/>
+                <div> 
+                  <h6>Price range: {{rangeValues[0] + ' - ' + rangeValues[1]}}</h6>
+                  <p-slider [(ngModel)]="rangeValues" [range]="true" class="my-rating"></p-slider>
+                </div>
+                <hr />
+                <label for="customRange3" class="form-label">Rating</label>
+                <p-rating [(ngModel)]="val2" [cancel]="false" ></p-rating>                
+                <br>
+                <a href="#" class="btn btn-warning" style="margin-top: 10px; margin-left: 10rem;">Apply filter</a>
+              </div>
+            </div>
+          </div>
+        </div> -->
+
+
+
+       
+
+          <div class="col">
+            <div class="bg">
+            </div>
+            <div class="nft">
+              <div class='main'>
+                <img class='tokenImage' src="../../assets/Images/linuxhackers.jpg" routerLink="/coursecontent"
+                  alt="courseimage" />
+                <div class="label-top shadow-sm">Best seller</div>
+                <hr />
+                <div style="color: #fff;">GIT and OS - Linux Commands</div>
+                <br>
+                <div class='tokenInfo'>
+                  <div class="price">
+                    <div class="clearfix mb-3 d-flex">
+  
+                      <span class="float-start badge rounded-pill bg-success"><i class="fas fa-inr"></i>4000</span>
+                      <span
+                        style="text-decoration: line-through; font-size: 12px; color: aliceblue; margin-left: 10px;"><i
+                          class="fas fa-inr"
+                          style="text-decoration: line-through; font-size: 10px; color: aliceblue;"></i>6000</span>
+                    </div>
+                  </div>
+                  <a href="#" class="btn btn-warning" style="margin-top: -13px;">Add to card</a>
+                </div>
+                <div class="rating d-flex"
+                  style="padding: 10px 0px 10px 0px; font-size: 10px; justify-content: space-between; ">
+                  <div>
+                    <span style="font-size: 14px; color: #fff; font-weight: 500; margin-right: 10px;">3.0</span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span style="font-size: 12px; color: #fff; margin-left: 10px;">(3,000)</span>
+                  </div>
+                  <div>
+                    <span id="heart" [ngClass]="{ liked: isLiked }" (click)="toggleLike()"
+                      style="font-size: 16px; text-align: right;">
+                      <i class="fa" [ngClass]="{ 'fa-heart-o': !isLiked, 'fa-heart': isLiked }" aria-hidden="true"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
+      </div>
+      
+    </div>
+  </main>
+
